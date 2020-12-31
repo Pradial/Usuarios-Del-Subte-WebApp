@@ -15,14 +15,12 @@ public class HomeController {
 
     @GetMapping("/")
     public String home(Model model){
-
         model.addAttribute("jsonA", obtainDatos.getDatosPorLinea("A"));
         model.addAttribute("jsonB", obtainDatos.getDatosPorLinea("B"));
         model.addAttribute("jsonC", obtainDatos.getDatosPorLinea("C"));
         model.addAttribute("jsonD", obtainDatos.getDatosPorLinea("D"));
         model.addAttribute("jsonE", obtainDatos.getDatosPorLinea("E"));
         model.addAttribute("jsonH", obtainDatos.getDatosPorLinea("H"));
-
         return "home";
     }
 }

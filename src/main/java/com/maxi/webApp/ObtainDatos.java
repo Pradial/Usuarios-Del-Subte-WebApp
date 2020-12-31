@@ -50,6 +50,7 @@ public class ObtainDatos {
             dato.setPasajeros(hashMapTransitorio.get(key));
             listaDeDatos.add(dato);
         }
+
         Collections.sort(listaDeDatos, new Comparator<Datos>() {
             public int compare(Datos o1, Datos o2) {
                 return o1.getDateTime().compareTo(o2.getDateTime());

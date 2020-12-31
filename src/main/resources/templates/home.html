@@ -6,260 +6,248 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
     <title>El coronavirus y el subte</title>
 
-
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="hojadeestilo.css" charset="UTF-8">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
-
 </head>
 
 
 <body>
 
-<h1 style="text-align: center; padding: 60px; color:black ; font-family: Arial, Helvetica, sans-serif; font-size: 4em;">El coronavirus y los subtes <img src="iconosubte.png" alt="icono de subte" style="width:70px;height:70px;"></h1>
+    <h1>El coronavirus y los subtes <img src="iconosubte.png" alt="icono de subte" style="width:70px;height:70px;"></h1>
 
-<div style="width: 50%;margin-left: 25%;" class="accordion" id="accordionExample">
-
-    <div class="card">
-        <div class="card-header" id="introduccion">
-            <h2 class="mb-0">
-                <button style="color:black"class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseIntro" aria-expanded="true" aria-controls="collapseIntro">
-                    <strong>Introducción</strong>
-                </button>
-            </h2>
+    <div class="accordion" id="accordionExample">
+        <div class="card">
+            <div class="card-header" id="introduccion">
+                <h2 class="mb-0">
+                    <button style="color:black"class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseIntro" aria-expanded="true" aria-controls="collapseIntro">
+                        <strong>Introducción</strong>
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseIntro" class="collapse show" aria-labelledby="introduccion" data-parent="#accordionExample">
+                <div class="card-body">
+                    El riesgo de contagio en el transporte público es alto, especialmente en aquellos medios de transporte que no cuentan con un sistema de ventilación adecuado, como es el caso del subte.
+                    Esto ha llevado al gobierno argentino a decretar la prohibición de utilizar el subte porteño a todos los ciudadanos, a excepción de los trabajadores esenciales y de aquellas personas que cuentan con un permiso especial.
+                    Por consiguiente, la cantidad de personas que utilizan el subte ha disminuido drásticamente. Los gráficos siguientes muestran las abruptas caídas en los usuarios diarios de cada línea de subterráneo desde el inicio de las restricciones de circulación en la Ciudad de Buenos Aires.
+                </div>
+            </div>
         </div>
-        <div id="collapseIntro" class="collapse show" aria-labelledby="introduccion" data-parent="#accordionExample">
-            <div class="card-body">
-                El riesgo de contagio en el transporte público es alto, especialmente en aquellos medios de transporte que no cuentan con un sistema de ventilación adecuado, como es el caso del subte.
-                Esto ha llevado al gobierno argentino a decretar la prohibición de utilizar el subte porteño a todos los ciudadanos, a excepción de los trabajadores esenciales y de aquellas personas que cuentan con un permiso especial.
-                Por consiguiente, la cantidad de personas que utilizan el subte ha disminuido drásticamente. Los gráficos siguientes muestran las abruptas caídas en los usuarios diarios de cada línea de subterráneo desde el inicio de las restricciones de circulación en la Ciudad de Buenos Aires.
+
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                    <button style="background-color:lightskyblue; color:black"class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        <strong>Línea A</strong>
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    <canvas id="graficoA"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                    <button style="background-color:red; color:black"class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <strong>Línea B</strong>
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                    <canvas id="graficoB"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                    <button style="background-color:rgb(61, 61, 233); color:black"class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <strong>Línea C</strong>
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                    <canvas id="graficoC"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingFour">
+                <h2 class="mb-0">
+                    <button style="background-color:green; color:black"class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        <strong>Línea D</strong>
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                <div class="card-body">
+                    <canvas id="graficoD"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingFive">
+                <h2 class="mb-0">
+                    <button style="background-color:purple; color:black"class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        <strong>Línea E</strong>
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                <div class="card-body">
+                    <canvas id="graficoE"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingSix">
+                <h2 class="mb-0">
+                    <button style="background-color:yellow; color:black"class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        <strong>Línea H</strong>
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+                <div class="card-body">
+                    <canvas id="graficoH"></canvas>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="card">
-        <div class="card-header" id="headingOne">
-            <h2 class="mb-0">
-                <button style="background-color:lightskyblue; color:black"class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                    <strong>Línea A</strong>
-                </button>
-            </h2>
-        </div>
-        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-            <div class="card-body">
-                <canvas id="graficoA" style="padding-left: 0; padding-right: 0; margin-left: auto; margin-right: auto; display: block; width:800px;"></canvas>
-            </div>
-        </div>
-    </div>
 
-    <div class="card">
-        <div class="card-header" id="headingTwo">
-            <h2 class="mb-0">
-                <button style="background-color:red; color:black"class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    <strong>Línea B</strong>
-                </button>
-            </h2>
-        </div>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-            <div class="card-body">
-                <canvas id="graficoB" style="padding-left: 0; padding-right: 0;margin-left: auto;margin-right: auto;display: block; width:800px;"></canvas>
-            </div>
-        </div>
-    </div>
+    <script th:inline="javascript">
+    /*<![CDATA[*/
+          var jsonLineaA = [[${jsonA}]];
+          var jsonLineaB = [[${jsonB}]];
+          var jsonLineaC = [[${jsonC}]];
+          var jsonLineaD = [[${jsonD}]];
+          var jsonLineaE = [[${jsonE}]];
+          var jsonLineaH = [[${jsonH}]];
+    /*]]>*/
+    </script>
 
-    <div class="card">
-        <div class="card-header" id="headingThree">
-            <h2 class="mb-0">
-                <button style="background-color:rgb(61, 61, 233); color:black"class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    <strong>Línea C</strong>
-                </button>
-            </h2>
-        </div>
-        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-            <div class="card-body">
-                <canvas id="graficoC" style="padding-left: 0; padding-right: 0;margin-left: auto;margin-right: auto;display: block; width:800px;"></canvas>
-            </div>
-        </div>
-    </div>
+    <script>
+        var arrayA = JSON.parse(jsonLineaA);
+        var datosA = arrayA.map(Object.values);
 
-    <div class="card">
-        <div class="card-header" id="headingFour">
-            <h2 class="mb-0">
-                <button style="background-color:green; color:black"class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                    <strong>Línea D</strong>
-                </button>
-            </h2>
-        </div>
-        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-            <div class="card-body">
-                <canvas id="graficoD" style="padding-left: 0; padding-right: 0;margin-left: auto;margin-right: auto;display: block; width:800px;"></canvas>
-            </div>
-        </div>
-    </div>
+        var datosArrayA = [];
+        var labelArrayA = [];
 
-    <div class="card">
-        <div class="card-header" id="headingFive">
-            <h2 class="mb-0">
-                <button style="background-color:purple; color:black"class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                    <strong>Línea E</strong>
-                </button>
-            </h2>
-        </div>
-        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
-            <div class="card-body">
-                <canvas id="graficoE" style="padding-left: 0; padding-right: 0;margin-left: auto;margin-right: auto;display: block; width:800px;"></canvas>
-            </div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-header" id="headingSix">
-            <h2 class="mb-0">
-                <button style="background-color:yellow; color:black"class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                    <strong>Línea H</strong>
-                </button>
-            </h2>
-        </div>
-        <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
-            <div class="card-body">
-                <canvas id="graficoH" style="padding-left: 0; padding-right: 0;margin-left: auto;margin-right: auto;display: block; width:800px;"></canvas>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-<style>
-  body {
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/54/Vista_amplia_de_la_estaci%C3%B3n_Santa_F%C3%A9.jpg');
-  }
-</style>
-
-<script th:inline="javascript">
-/*<![CDATA[*/
-      var jsonLineaA = [[${jsonA}]];
-      var jsonLineaB = [[${jsonB}]];
-      var jsonLineaC = [[${jsonC}]];
-      var jsonLineaD = [[${jsonD}]];
-      var jsonLineaE = [[${jsonE}]];
-      var jsonLineaH = [[${jsonH}]];
-/*]]>*/
-</script>
-
-<script>
-    var arrayA = JSON.parse(jsonLineaA);
-    var datosA = arrayA.map(Object.values);
-
-    var datosArrayA = [];
-    var labelArrayA = [];
-
-    for(i = 0; i<datosA.length; i++){
-        datosArrayA.push((datosA[i])[1]);
-        labelArrayA.push(new Date((datosA[i])[0]));
-    }
-
-
-    var arrayB = JSON.parse(jsonLineaB);
-    var datosB = arrayB.map(Object.values);
-
-    var datosArrayB = [];
-    var labelArrayB = [];
-
-    for(i = 0; i<datosB.length; i++){
-        datosArrayB.push((datosB[i])[1]);
-        labelArrayB.push(new Date((datosB[i])[0]));
-    }
-
-
-    var arrayC = JSON.parse(jsonLineaC);
-    var datosC = arrayC.map(Object.values);
-
-    var datosArrayC = [];
-    var labelArrayC = [];
-
-    for(i = 0; i<datosC.length; i++){
-        datosArrayC.push((datosC[i])[1]);
-        labelArrayC.push(new Date((datosC[i])[0]));
-    }
-
-
-    var arrayD = JSON.parse(jsonLineaD);
-    var datosD = arrayD.map(Object.values);
-
-    var datosArrayD = [];
-    var labelArrayD = [];
-
-    for(i = 0; i<datosD.length; i++){
-        datosArrayD.push((datosD[i])[1]);
-        labelArrayD.push(new Date((datosD[i])[0]));
-    }
-
-
-    var arrayE = JSON.parse(jsonLineaE);
-    var datosE = arrayE.map(Object.values);
-
-    var datosArrayE = [];
-    var labelArrayE = [];
-
-    for(i = 0; i<datosE.length; i++){
-        datosArrayE.push((datosE[i])[1]);
-        labelArrayE.push(new Date((datosE[i])[0]));
-    }
-
-
-    var arrayH = JSON.parse(jsonLineaH);
-    var datosH = arrayH.map(Object.values);
-
-    var datosArrayH = [];
-    var labelArrayH = [];
-
-    for(i = 0; i<datosH.length; i++){
-        datosArrayH.push((datosH[i])[1]);
-        labelArrayH.push(new Date((datosH[i])[0]));
-    }
-
-</script>
-
-<script>
-var TimeCenterScale = Chart.scaleService.getScaleConstructor('time').extend({
-    getPixelForTick: function(index) {
-        var ticks = this.getTicks();
-        if (index < 0 || index >= ticks.length) {
-            return null;
-        }
-        var px = this.getPixelForOffset(ticks[index].value);
-
-        var nextPx = this.right;
-        var nextTick = ticks[index + 1];
-        if (nextTick) {
-            nextPx = this.getPixelForOffset(nextTick.value);
+        for(i = 0; i<datosA.length; i++){
+            datosArrayA.push((datosA[i])[1]);
+            labelArrayA.push(new Date((datosA[i])[0]));
         }
 
-        return px + (nextPx - px) / 2;
-    },
-});
-var defaults = Chart.scaleService.getScaleDefaults('time');
-Chart.scaleService.registerScaleType('timecenter', TimeCenterScale, defaults);
-</script>
+
+        var arrayB = JSON.parse(jsonLineaB);
+        var datosB = arrayB.map(Object.values);
+
+        var datosArrayB = [];
+        var labelArrayB = [];
+
+        for(i = 0; i<datosB.length; i++){
+            datosArrayB.push((datosB[i])[1]);
+            labelArrayB.push(new Date((datosB[i])[0]));
+        }
 
 
-<script src="graficoLineaA.js" type="text/javascript" charset="UTF-8"></script>
-<script src="graficoLineaB.js" type="text/javascript" charset="UTF-8"></script>
-<script src="graficoLineaC.js" type="text/javascript" charset="UTF-8"></script>
-<script src="graficoLineaD.js" type="text/javascript" charset="UTF-8"></script>
-<script src="graficoLineaE.js" type="text/javascript" charset="UTF-8"></script>
-<script src="graficoLineaH.js" type="text/javascript" charset="UTF-8"></script>
+        var arrayC = JSON.parse(jsonLineaC);
+        var datosC = arrayC.map(Object.values);
+
+        var datosArrayC = [];
+        var labelArrayC = [];
+
+        for(i = 0; i<datosC.length; i++){
+            datosArrayC.push((datosC[i])[1]);
+            labelArrayC.push(new Date((datosC[i])[0]));
+        }
 
 
+        var arrayD = JSON.parse(jsonLineaD);
+        var datosD = arrayD.map(Object.values);
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+        var datosArrayD = [];
+        var labelArrayD = [];
 
+        for(i = 0; i<datosD.length; i++){
+            datosArrayD.push((datosD[i])[1]);
+            labelArrayD.push(new Date((datosD[i])[0]));
+        }
+
+
+        var arrayE = JSON.parse(jsonLineaE);
+        var datosE = arrayE.map(Object.values);
+
+        var datosArrayE = [];
+        var labelArrayE = [];
+
+        for(i = 0; i<datosE.length; i++){
+            datosArrayE.push((datosE[i])[1]);
+            labelArrayE.push(new Date((datosE[i])[0]));
+        }
+
+
+        var arrayH = JSON.parse(jsonLineaH);
+        var datosH = arrayH.map(Object.values);
+
+        var datosArrayH = [];
+        var labelArrayH = [];
+
+        for(i = 0; i<datosH.length; i++){
+            datosArrayH.push((datosH[i])[1]);
+            labelArrayH.push(new Date((datosH[i])[0]));
+        }
+
+    </script>
+
+    <script>
+        var TimeCenterScale = Chart.scaleService.getScaleConstructor('time').extend({
+            getPixelForTick: function(index) {
+                var ticks = this.getTicks();
+                if (index < 0 || index >= ticks.length) {
+                    return null;
+                }
+                var px = this.getPixelForOffset(ticks[index].value);
+
+                var nextPx = this.right;
+                var nextTick = ticks[index + 1];
+                if (nextTick) {
+                    nextPx = this.getPixelForOffset(nextTick.value);
+                }
+
+                return px + (nextPx - px) / 2;
+            },
+        });
+        var defaults = Chart.scaleService.getScaleDefaults('time');
+        Chart.scaleService.registerScaleType('timecenter', TimeCenterScale, defaults);
+    </script>
+
+    <script src="graficoLineaA.js" type="text/javascript" charset="UTF-8"></script>
+    <script src="graficoLineaB.js" type="text/javascript" charset="UTF-8"></script>
+    <script src="graficoLineaC.js" type="text/javascript" charset="UTF-8"></script>
+    <script src="graficoLineaD.js" type="text/javascript" charset="UTF-8"></script>
+    <script src="graficoLineaE.js" type="text/javascript" charset="UTF-8"></script>
+    <script src="graficoLineaH.js" type="text/javascript" charset="UTF-8"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 
 </body>
 
